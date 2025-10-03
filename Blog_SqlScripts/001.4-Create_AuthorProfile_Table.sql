@@ -17,7 +17,7 @@ CREATE TABLE [dbo].[AuthorProfile](
 	[account_id]	[int]					NOT NULL,
 	[biography]		[nvarchar](255)			NULL,
 	[social_links]	[nvarchar](max)			NULL,
-	[experties]		[nvarchar](255)			NOT NULL,
+	[expertise]		[nvarchar](255)			NOT NULL,
 
 	-- PK
 	CONSTRAINT [PK_AuthorProfile_AuthorID] PRIMARY KEY CLUSTERED 
@@ -48,6 +48,6 @@ GO
 -- 1. 'experties' : Must not be empty or consist only of spaces
 --==========================================================--
 ALTER TABLE dbo.AuthorProfile ADD CONSTRAINT
-	CK_AuthorProfile_Experties 
-	CHECK (LEN(LTRIM(RTRIM(experties))) > 0)
+	CK_AuthorProfile_Expertise 
+	CHECK (LEN(LTRIM(RTRIM(expertise))) > 0)
 GO
